@@ -1,7 +1,16 @@
 # Structural_variants
 Unicamp server
+**Short-reads**
+--------------------------
+**1.Alingment**
+
+*a. Index the genome*
+
 ```
-conda activate 
+conda activate BWA
+
+bwa index PITSTA_inv_final.fasta
+
 ```
 
 
@@ -36,6 +45,13 @@ collapse 3 callers - Kanpig - garantir que a genotipagem está correta
 
 
 merge with sneffles e genotipar com kanpig
+
+
+Validation methods
+
+combinação de SVs com metilação
+metilação como proxy para diferenciação nos tecidos
+
 
 
 
