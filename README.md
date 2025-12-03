@@ -1,4 +1,9 @@
 # Structural_variants
+Unicamp server
+```
+conda activate 
+```
+
 
 POPULATION
 -------------------------------------------------
@@ -23,5 +28,15 @@ sniffless - pode merge
 
 Para varias variantes, você não sabe se elas co-ocorrem 
 
-<img width="1234" height="619" alt="image" src="https://github.com/user-attachments/assets/27cb0403-4772-4151-8558-28a8c6bbf494" />
+<img width="1234" height="619" alt="image" src="https://github.com/user-attachments/assets/27cb0403-4772-4151-8558-28a8c6bbf494" /> 
+
+
+Delly, snfless
+collapse 3 callers - Kanpig - garantir que a genotipagem está correta
+
+
+merge with sneffles e genotipar com kanpig
+
+
+
 
