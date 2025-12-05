@@ -9,9 +9,15 @@ Unicamp server
 ```
 conda activate BWA
 
-bwa index PITSTA_inv_final.fasta
-
+bwa-mem2 index PITSTA_inv_final.fasta
 ```
+
+*b. Run alingment*
+
+create commant lines for each sample: script cl_alingment.sh
+run bwa:
+```
+
 
 
 POPULATION
