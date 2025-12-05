@@ -18,12 +18,6 @@ while IFS= read -r sample; do
     R2="${sample}_2.fastq.gz"
     SAM="${sample}.sam"
 
-    # Verifica se os arquivos existem
-    if [[ -f "$R1" && -f "$R2" ]]; then
-        echo "bwa mem -t 4 $ref $R1 $R2 > $SAM" >> "$output"
-    else
-        echo "AVISO: faltando R1 ou R2 para $sample" >&2
-    fi
+    echo "bwa mem -t 4 $ref $R1 $R2 > $SAM" >> "$output"
 
 done < "$samplefile"
-
