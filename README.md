@@ -15,7 +15,7 @@ bwa-mem2 index PITSTA_inv_final.fasta
 *b. Run alingment*
 
 ```
-cat samples.txt | parallel -j 5 'bwa-mem2 mem -t 4 /area/DBV/LAB-EEGP/Genomes/PITSTA_inv_final.fasta /area/DBV/LAB-EEGP/Clarisse_Palma/P_staminea_albiflos/Download100823_Marilia_WGS/HN00198661/{.}_1.fastq.gz /area/DBV/LAB-EEGP/Clarisse_Palma/P_staminea_albiflos/Download100823_Marilia_WGS/HN00198661/{.}_2.fastq.gz > {.}.sam' | samtools sort -o {1}.bam
+cat samples.txt | parallel -j 10 'bwa-mem2 mem -t 6 /area/DBV/LAB-EEGP/Genomes/PITSTA_inv_final.fasta /area/DBV/LAB-EEGP/Clarisse_Palma/P_staminea_albiflos/Download100823_Marilia_WGS/HN00198661/{.}_1.fastq.gz /area/DBV/LAB-EEGP/Clarisse_Palma/P_staminea_albiflos/Download100823_Marilia_WGS/HN00198661/{.}_2.fastq.gz > {.}.sam' | samtools sort -o {1}.bam
 ```
 
 **2.Add @RG**
