@@ -18,6 +18,6 @@ while IFS= read -r sample; do
     R2="${sample}_2.fastq.gz"
     SAM="${sample}.sam"
 
-    echo "bwa mem -t 4 $ref $R1 $R2 > $SAM" >> "$output"
+    echo "bwa-mem2 mem -t 4 $ref $R1 $R2 > $SAM" >> "$output"
 
 done < "$samplefile"
