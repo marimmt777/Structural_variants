@@ -14,32 +14,9 @@ bwa-mem2 index PITSTA_inv_final.fasta
 
 *b. Run alingment*
 
-1. create commant lines for each sample: script cl_alingment.sh
-run bwa:
 ```
-ref="/area/DBV/LAB-EEGP/Genomes/PITSTA_inv_final.fasta"
-
-samplefile="samples.txt"
-output="commands_alignment.txt"
-
-# limpa arquivo de saída
-> "$output"
-
-while IFS= read -r sample; do
-    
-    R1="${sample}_1.fastq.gz"
-    R2="${sample}_2.fastq.gz"
-    SAM="${sample}.sam"
-
-    echo "bwa-mem2 mem -t 4 $ref /area/DBV/LAB-EEGP/Clarisse_Palma/P_staminea_albiflos/Download100823_Marilia_WGS/HN00198661/$R1 /area/DBV/LAB-EEGP/Clarisse_Palma/P_staminea_albiflos/Download100823_Marilia_WGS/HN00198661/$R2 > $SAM" >> "$output"
-
-done < "$samplefile"
-
-```
-2. run commandl lines in parallel
-```
-screen -S alinhamento
-parallel -j 5 < commands_alignment.txt
+cat samples.txt | parallel -j 5 'bwa-mem2 mem -t 4 /area/DBV/LAB-EEGP/Genomes/PITSTA_inv_final.fasta /area/DBV/LAB-EEGP/Clarisse_Palma/P_staminea_albiflos/Download100823_Marilia_WGS/HN00198661/{.}_1.fastq.gz /area/DBV/LAB-
+EEGP/Clarisse_Palma/P_staminea_albiflos/Download100823_Marilia_WGS/HN00198661/{.}_2.fastq.gz > {.}.sam' | samtools sort -o {1}.bam
 ```
 
 POPULATION
