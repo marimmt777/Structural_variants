@@ -14,7 +14,7 @@ bwa-mem2 index PITSTA_inv_final.fasta
 
 *b. Run alingment*
 
-create commant lines for each sample: script cl_alingment.sh
+1. create commant lines for each sample: script cl_alingment.sh
 run bwa:
 ```
 ref="/area/DBV/LAB-EEGP/Genomes/PITSTA_inv_final.fasta"
@@ -36,7 +36,11 @@ while IFS= read -r sample; do
 done < "$samplefile"
 
 ```
-
+2. run commandl lines in parallel
+```
+screen -S alinhamento
+parallel -j 5 < commands_alignment.txt
+```
 
 POPULATION
 -------------------------------------------------
